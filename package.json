@@ -1,0 +1,20 @@
+{
+  "name": "machine-test-next",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.0",
+    "axios": "^1.0.0",
+    "bootstrap": "^5.2.0",
+    "next": "13.x",
+    "react": "18.x",
+    "react-bootstrap": "^2.5.0",
+    "react-dom": "18.x",
+    "react-icons": "^5.5.0",
+    "react-redux": "^8.0.5"
+  }
+}

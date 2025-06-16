@@ -32,14 +32,16 @@ export default function Login() {
   return (
     <Container fluid className="vh-100 d-flex align-items-center px-0 bg-white">
       <Row className="w-100 gx-0">
-        {/* Left Side */}
         <Col
           md={6}
           className="d-flex flex-column justify-content-center align-items-center px-5"
         >
           <div style={{ maxWidth: 400, width: "100%" }}>
             <h3 className="fw-bold text-dark mb-2">Sign In</h3>
-            <p className="text-muted mb-4" style={{ fontSize: "0.9rem" }}>
+            <p
+              className="text-muted fw-bold mb-4"
+              style={{ fontSize: "0.9rem" }}
+            >
               New user?{" "}
               <a href="#" className="text-primary text-decoration-none">
                 Create an account
@@ -97,7 +99,6 @@ export default function Login() {
               </Button>
             </Form>
 
-            {/* Divider */}
             <div className="d-flex align-items-center my-4">
               <div
                 className="flex-grow-1"
@@ -119,7 +120,6 @@ export default function Login() {
               ></div>
             </div>
 
-            {/* Social Icons */}
             <div className="d-flex justify-content-center gap-3">
               {[FaGoogle, FaFacebookF, FaLinkedinIn, FaTwitter].map(
                 (Icon, idx) => (
@@ -140,13 +140,12 @@ export default function Login() {
           </div>
         </Col>
 
-        {/* Right Side Illustration */}
         <Col
           md={6}
           className="d-none d-md-flex justify-content-center align-items-center bg-white"
         >
           <img
-            src="/login-illustration.png"
+            src="/images/login.svg"
             alt="Sign In Illustration"
             style={{ maxWidth: "65%", objectFit: "contain" }}
           />

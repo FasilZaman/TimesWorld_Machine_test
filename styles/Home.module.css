@@ -52,7 +52,7 @@
 @media (min-width: 768px) {
   .sliderWrapper {
     flex-direction: row;
-    gap: 1rem;
+    gap: 0;
   }
 }
 
@@ -151,6 +151,7 @@
   padding: 6px 18px;
   font-size: 14px;
   border-radius: 3px;
+  transition: background-color 0.3s ease;
 }
 
 .footer {
@@ -201,4 +202,9 @@
   height: 30px;
   object-fit: cover;
   border-radius: 4px;
+}
+
+.loadMore:hover {
+  background-color: #3e4043;
+  color: white;
 }

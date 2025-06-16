@@ -24,9 +24,7 @@ export default function Home() {
   const { all, status, error, regionFilter, page, perPage } = useSelector(
     (state) => state.countries
   );
-
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-
   useEffect(() => {
     if (status === "idle") dispatch(fetchCountries());
   }, [status, dispatch]);
@@ -38,13 +36,11 @@ export default function Home() {
 
   return (
     <Container className={`pt-4 ${styles.wrapper}`}>
-      {/* Top Filters & Heading */}
       <div
         className={`d-flex align-items-center justify-content-between ${styles.topBar}`}
       >
         <div className={styles.countryLabel}>Countries</div>
 
-        {/* Desktop Tabs */}
         <Nav fill className={`d-none d-md-flex ${styles.tabs}`}>
           {regions.map((region) => (
             <Nav.Item key={region}>
@@ -60,7 +56,6 @@ export default function Home() {
           ))}
         </Nav>
 
-        {/* Mobile Menu */}
         <div className="d-md-none">
           <Button
             variant="light"
@@ -90,16 +85,13 @@ export default function Home() {
         </div>
       </div>
 
-      {/* WELCOME heading */}
       <div className="my-4 text-center">
-        {/* Mobile: top & bottom lines */}
         <div className="d-md-none">
           <div className={styles.mobileLine}></div>
           <h6 className={`mt-2 mb-2 ${styles.pageTitle}`}>WELCOME</h6>
           <div className={styles.mobileLine}></div>
         </div>
 
-        {/* Desktop: side lines */}
         <div
           className={`d-none d-md-flex justify-content-center align-items-center ${styles.pageTitleWrapper}`}
         >
@@ -109,11 +101,9 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Slider + Banner */}
       <div className={styles.sliderWrapper}>
-        {/* Mobile: Banner above */}
         <div className={`d-block d-md-none ${styles.sideBanner}`}>
-          <img src="/images/side-banner.png" alt="Banner" />
+          <img src="images/sideBanner.jpg" alt="sideBanner" />
         </div>
 
         <div className={styles.sliderSection}>
@@ -121,25 +111,23 @@ export default function Home() {
             {[1, 2, 3].map((i) => (
               <Carousel.Item key={i}>
                 <div className={styles.slide}>
-                  <img src={`/images/slide${i}.png`} alt={`Slide ${i}`} />
+                  <img src={`/images/sliderImage${i}.jpg`} alt={`Slide ${i}`} />
                 </div>
               </Carousel.Item>
             ))}
           </Carousel>
         </div>
 
-        {/* Desktop: Banner beside */}
         <div className={`d-none d-md-block ${styles.sideBanner}`}>
-          <img src="/images/side-banner.png" alt="Banner" />
+          <img src="images/sideBanner.jpg" alt="sideBanner" />
         </div>
       </div>
 
-      {/* Country Cards */}
       {status === "loading" && <Spinner animation="border" />}
       {status === "failed" && <p>Error: {error}</p>}
       {status === "succeeded" && (
         <>
-          <Row className="gy-3">
+          <Row className="gy-3 mt-3">
             {visible.map((c) => (
               <Col key={c.name} xs={12} md={6}>
                 <Card className={styles.countryCard}>
@@ -168,8 +156,7 @@ export default function Home() {
         </>
       )}
 
-      {/* Footer */}
-      <footer className={`text-center mt-5 ${styles.footer}`}>
+      <footer className={`text-center mt-5 mb-5 ${styles.footer}`}>
         <div className="d-flex justify-content-center gap-3">
           {[FaGoogle, FaFacebookF, FaLinkedinIn, FaTwitter].map((Icon, idx) => (
             <div
